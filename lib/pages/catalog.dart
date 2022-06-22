@@ -41,27 +41,27 @@ class CatalogPageState extends State<CatalogPage> {
         backgroundColor: customOrange,
         title: const Text('Catalogue'),
       ),
-      body: Column(
-        children: [
-          ListView.separated(
+      body: ListView.separated(
             padding: const EdgeInsets.all(8),
             itemCount: moviesList.length,
             itemBuilder: (BuildContext context, int index) {
               Movie movie = moviesList[index];
               return Container(
+                color: Colors.black12,
                 padding: const EdgeInsets.all(2),
                 child: Row(children: [
                   Text(movie.title),
                   Text(movie.overview),
                   Image.network(movie.imageUrl),
-                ],),
+                ],
+                ),
               );
             },
             separatorBuilder: (BuildContext context, int index) =>
                 const Divider(),
           )
-        ],
-      ),
+
+
     );
   }
 }
